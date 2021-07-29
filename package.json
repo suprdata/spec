@@ -16,7 +16,7 @@
     "release": "npm run build && npx standard-version && npm publish --access public"
   },
   "dependencies": {
-    "@suprcrew/project-config": "^0.0.3",
+    "@suprcrew/project-config": "latest",
     "standard-version": "^9.3.1",
     "ts-json-schema-generator": "^0.95.0"
   },
