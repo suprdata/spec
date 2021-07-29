@@ -56,6 +56,30 @@ emitResponse(JSON.stringify(athlete));
 
 The frontend could use the spec to validate the incoming response.
 
+## Change log
+
+Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) and [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md) for details.
+
+## Deployment
+
+Only maintainers are allowed to deploy new versions!
+
+1. Run `npm run release` which will update changelog, package version and creates a publishes a release and push everything to master.
+
+## Security
+
+If you discover any security related issues, please email marco_bunge@web.de instead of using the issue tracker.
+
+## Credits
+
+- [Marco Bunge][link-author]
+- [All Contributors][link-contributors]
+
 ## License
 
-MIT
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
