@@ -1,9 +1,8 @@
-# @sprdata/spec
+# @suprdata/spec
 
-The SuprData specification allows the management of the entire 
-lifecycle of specific models, the consultation of models during 
-several processes such as content management, ordering processes, 
-catalog management, workflow management, application processes and furthermore.
+The SuprData specification allows the management of the entire lifecycle of specific models, the consultation of models
+during several processes such as content management, ordering processes, catalog management, workflow management,
+application processes and furthermore.
 
 ## Install
 
@@ -15,46 +14,65 @@ npm install @suprdata/spec
 
 We want to manage the players of a team.
 
-Let's create very simple Athlete model.
+Let's specify and model athletes and create a list of known football players.
 
 ```ts
-const athlete = {
+import {typed} from './model';
+
+const personType = typed<Thing>(('Common/Person'), {
+  '@context': 'Common',
+  '@version': '1',
+});
+
+const personSpec: Specification = personType({
+  name: 'Player component',
+  '@id': 'player/component',
+});
+
+const athleteType = typed<Thing>('SportsTeam/Athlete', {
   '@context': 'SportsTeam',
   '@baseType': 'Person',
-  '@type': 'Athlete',
   '@version': '1',
-  name: 'Harry Kane',
-  specification: {
-    name: 'Player component',
-    '@id': 'player/component',
-  },
+});
+
+const baseAthelete = mpdel<Thing>(athleteType({
+  specification: personSpec,
   accessRights: [
     {
       name: 'public',
       '@id': 'PUBLIC'
     }
   ]
-}
+}))
+
+const athletes: Thing[] = [
+  baseAthelete({
+    name: 'Harry Kane',
+  }),
+  baseAthelete({
+    name: 'Paul Pogba',
+  }),
+  baseAthelete({
+    name: 'Toni Kroos',
+  }),
+];
 ```
 
-Nextup we use schemas and ajv to validate the athlete model.
+We use schemas and ajv to validate the modeled athlete and create a JSON-Response for our API.
 
 ```ts
 import {thingSchema} from './schemas';
 
-const validateAthlete = ajv(thingSchema);
-const valid = validate(athlete)
-if (!valid) console.log(validate.errors)
+const validAthletes = athletes.filter((athlete) => {
+  const validateAthlete = ajv(thingSchema);
+  const valid = validate(athlete)
+  if (!valid) console.log(validate.errors)
+});
 
+emitResponse(JSON.stringify(validAthletes));
 ```
 
-Last but not least we create a JSON-Response for our API
-
-```ts
-emitResponse(JSON.stringify(athlete));
-```
-
-The frontend could use the spec to validate the incoming response.
+Supr data spec helps to create consistent data and helps to exchange between different systems, eg. between an API and Website.
 
 ## Change log
 
@@ -68,7 +86,8 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) and [CODE_OF_CONDUCT](CODE_OF_CONDUCT
 
 Only maintainers are allowed to deploy new versions!
 
-1. Run `npm run release` which will update changelog, package version and creates a publishes a release and push everything to master.
+1. Run `npm run release` which will update changelog, package version and creates a publishes a release and push
+   everything to master.
 
 ## Security
 
@@ -83,3 +102,5 @@ If you discover any security related issues, please email marco_bunge@web.de ins
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
+[link-author]: https://github.com/mbunge
+[link-contributors]: https://github.com/suprdata/spec/graphs/contributors
