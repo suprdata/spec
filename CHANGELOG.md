@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/suprdata/spec/compare/v0.1.0...v0.1.1) (2021-07-29)
+
+
+### Features
+
+* Push new created tag and master branch ([5847091](https://github.com/suprdata/spec/commit/5847091b2708981493d379395faadba74f41bbc8))
+* Update build script ([020367b](https://github.com/suprdata/spec/commit/020367bd81b10e5f4c2f56a63b79891c050c211e))
+* Use the latest version of project config ([71cd94f](https://github.com/suprdata/spec/commit/71cd94f38947b739cbf340d7e5b6a62b1fa60ff8))
+
 ## 0.1.0 (2021-07-29)
 
 
