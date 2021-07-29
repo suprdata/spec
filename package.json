@@ -1,6 +1,6 @@
 {
   "name": "@suprdata/spec",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Suprdata specification provided as types and json-schema",
   "main": "src/schemas.ts",
   "types": "lib/schemas.d.ts",
@@ -11,10 +11,9 @@
     "test:coverage": "./node_modules/jest/bin/jest.js tests --coverage",
     "test:watch:coverage": "./node_modules/jest/bin/jest.js tests --watch --coverage",
     "test": "npm run lint; npm run test:run",
-    "build": "rm -rf ./build && npm run lint && npm run test && ./node_modules/typescript/bin/tsc",
+    "build": "rm -rf ./lib && npm run build:lib",
     "build:lib": "./scripts/buildLibrary.sh",
-    "release": "npm test && npx standard-version && npm publish --access public",
-    "prepublishOnly": "npm run build:lib"
+    "release": "npm run build && npx standard-version && npm publish --access public"
   },
   "dependencies": {
     "@suprcrew/project-config": "^0.0.3",
