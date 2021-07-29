@@ -5,7 +5,7 @@
   "main": "src/schemas.ts",
   "types": "lib/schemas.d.ts",
   "scripts": {
-    "lint": "./node_modules/eslint/bin/eslint.js --color './src/**/*.ts",
+    "lint": "./node_modules/eslint/bin/eslint.js --color './src/**/*.ts'",
     "test:run": "./node_modules/jest/bin/jest.js tests",
     "test:watch": "./node_modules/jest/bin/jest.js tests --watch",
     "test:coverage": "./node_modules/jest/bin/jest.js tests --coverage",
