@@ -1,0 +1,69 @@
+{
+  "$ref": "#/definitions/CharacteristicValue",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "AccessRights": {
+      "additionalProperties": false,
+      "properties": {
+        "@id": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@id"
+      ],
+      "type": "object"
+    },
+    "CharacteristicValue": {
+      "additionalProperties": false,
+      "description": "Needs to have either value or valueResource.",
+      "properties": {
+        "characteristicValueResource": {
+          "$ref": "#/definitions/CharacteristicValueResource"
+        },
+        "hasResource": {
+          "type": "boolean"
+        },
+        "isDefault": {
+          "type": "boolean"
+        },
+        "value": {
+        }
+      },
+      "type": "object"
+    },
+    "CharacteristicValueResource": {
+      "additionalProperties": false,
+      "properties": {
+        "accessRights": {
+          "items": {
+            "$ref": "#/definitions/AccessRights"
+          },
+          "type": "array"
+        },
+        "byte": {
+          "type": "number"
+        },
+        "contentLink": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "mimeType": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  }
+}

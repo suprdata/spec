@@ -1,0 +1,81 @@
+{
+  "$ref": "#/definitions/Action",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "AccessRights": {
+      "additionalProperties": false,
+      "properties": {
+        "@id": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@id"
+      ],
+      "type": "object"
+    },
+    "Action": {
+      "additionalProperties": false,
+      "properties": {
+        "@context": {
+          "type": "string"
+        },
+        "@id": {
+          "type": "string"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "@version": {
+          "type": "string"
+        },
+        "accessRights": {
+          "items": {
+            "$ref": "#/definitions/AccessRights"
+          },
+          "type": "array"
+        },
+        "description": {
+          "type": "string"
+        },
+        "lifecycleStatus": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "#/definitions/TimePeriod"
+        }
+      },
+      "required": [
+        "@id"
+      ],
+      "type": "object"
+    },
+    "TimePeriod": {
+      "additionalProperties": false,
+      "properties": {
+        "from": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "to": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "required": [
+        "from",
+        "to"
+      ],
+      "type": "object"
+    }
+  }
+}

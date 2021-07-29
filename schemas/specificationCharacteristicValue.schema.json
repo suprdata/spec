@@ -1,0 +1,82 @@
+{
+  "$ref": "#/definitions/SpecificationCharacteristicValue",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "AccessRights": {
+      "additionalProperties": false,
+      "properties": {
+        "@id": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@id"
+      ],
+      "type": "object"
+    },
+    "SpecificationCharacteristicValue": {
+      "additionalProperties": false,
+      "properties": {
+        "accessRights": {
+          "items": {
+            "$ref": "#/definitions/AccessRights"
+          },
+          "type": "array"
+        },
+        "editable": {
+          "type": "boolean"
+        },
+        "isDefault": {
+          "type": "boolean"
+        },
+        "isResource": {
+          "type": "boolean"
+        },
+        "producible": {
+          "description": "allow or disallow generated content from any source with rules based on CommonSpecCharValueUse for example comments of any news",
+          "type": "boolean"
+        },
+        "rangeInterval": {
+          "type": "string"
+        },
+        "value": {
+        },
+        "valueFrom": {
+        },
+        "valueRegex": {
+          "type": "string"
+        },
+        "valueResource": {
+          "$ref": "#/definitions/SpecificationCharacteristicValueResource"
+        },
+        "valueTo": {
+        },
+        "visible": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "SpecificationCharacteristicValueResource": {
+      "additionalProperties": false,
+      "properties": {
+        "maxBytes": {
+          "type": "number"
+        },
+        "mimeTypes": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  }
+}
