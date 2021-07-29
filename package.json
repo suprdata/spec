@@ -11,7 +11,7 @@
     "test:coverage": "./node_modules/jest/bin/jest.js tests --coverage",
     "test:watch:coverage": "./node_modules/jest/bin/jest.js tests --watch --coverage",
     "test": "npm run lint; npm run test:run",
-    "build": "rm -rf ./lib && npm run lint && npm run build:lib && git add ./lib && git add ./src/schemas.ts && git add ./schemas && git commit -m 'chore(release): build artifacts'",
+    "build": "rm -rf ./lib && npm run lint && npm run build:lib && git add ./lib && git add ./src/schemas.ts && git add ./schemas && git diff-index --quiet HEAD || git commit -m 'chore(release): build artifacts'",
     "build:lib": "./scripts/buildLibrary.sh",
     "release": "npm run build && npx standard-version && git push --follow-tags origin master && npm publish --access public"
   },
