@@ -1,3 +1,17 @@
 {
-  "extends": "./node_modules/@suprdata/project-config/configs/tsconfig.base.json"
+  "extends": "./node_modules/@suprcrew/project-config/configs/tsconfig.base.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "declaration": true,
+    "outDir": "./lib"
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules/*",
+    "tests/**/*.ts",
+    "scripts/**/*.ts"
+  ]
 }

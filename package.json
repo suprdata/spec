@@ -1,8 +1,9 @@
 {
   "name": "@suprdata/spec",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Suprdata specification provided as types and json-schema",
+  "main": "src/schemas.ts",
+  "types": "lib/schemas.d.ts",
   "scripts": {
     "lint": "./node_modules/eslint/bin/eslint.js --color './src/**/*.ts",
     "test:run": "./node_modules/jest/bin/jest.js tests",
@@ -10,13 +11,16 @@
     "test:coverage": "./node_modules/jest/bin/jest.js tests --coverage",
     "test:watch:coverage": "./node_modules/jest/bin/jest.js tests --watch --coverage",
     "test": "npm run lint; npm run test:run",
-    "build": "rm -rf ./build && npm run lint && npm run test && ./node_modules/typescript/bin/tsc"
-    "release": "npm test && npx standard-version && npm publish --access public"
+    "build": "rm -rf ./build && npm run lint && npm run test && ./node_modules/typescript/bin/tsc",
+    "build:lib": "./scripts/buildLibrary.sh",
+    "release": "npm test && npx standard-version && npm publish --access public",
+    "prepublishOnly": "npm run build:lib"
   },
   "dependencies": {
     "@suprcrew/project-config": "^0.0.3",
-    "standard-version": "^9.3.1"
+    "standard-version": "^9.3.1",
+    "ts-json-schema-generator": "^0.95.0"
   },
-  "author": "",
+  "author": "Marco Bunge",
   "license": "MIT"
 }
