@@ -1,3 +1,4 @@
+
 export const accessRightsSchema = `{
   "$ref": "#/definitions/AccessRights",
   "$schema": "http://json-schema.org/draft-07/schema#",
