@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/suprdata/spec/compare/v0.1.2...v0.1.3) (2021-07-29)
+
+
+### Features
+
+* add helpers to construct concrete models ([21812b9](https://github.com/suprdata/spec/commit/21812b9b4c2c6d2c410f9bf1ec800d44ea57b6af))
+* Optimize and test build-process ([69aeb2c](https://github.com/suprdata/spec/commit/69aeb2c03259bae193f86d25cea847445be856a9))
+
+
+### Bug Fixes
+
+* Don't commit and push build artifacts ([ff695c6](https://github.com/suprdata/spec/commit/ff695c658cc77bce1fd33b199c4a9c0943789d5d))
+* Use correct folder to generate json-schemas. ([060c229](https://github.com/suprdata/spec/commit/060c22921eccd57453588e769cb80d17e69c9eb6))
+
 ### [0.1.2](https://github.com/suprdata/spec/compare/v0.1.1...v0.1.2) (2021-07-29)
 
 
