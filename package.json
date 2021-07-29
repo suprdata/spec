@@ -1,5 +1,5 @@
 {
-  "name": "spec",
+  "name": "@suprdata/spec",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
@@ -11,9 +11,11 @@
     "test:watch:coverage": "./node_modules/jest/bin/jest.js tests --watch --coverage",
     "test": "npm run lint; npm run test:run",
     "build": "rm -rf ./build && npm run lint && npm run test && ./node_modules/typescript/bin/tsc"
+    "release": "npm test && npx standard-version && npm publish --access public"
   },
   "dependencies": {
-    "@suprcrew/project-config": "^0.0.3"
+    "@suprcrew/project-config": "^0.0.3",
+    "standard-version": "^9.3.1"
   },
   "author": "",
   "license": "MIT"
