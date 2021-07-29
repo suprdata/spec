@@ -10,7 +10,7 @@ do
     fileName="$(tr '[:upper:]' '[:lower:]' <<< ${typeName:0:1})${typeName:1}"
     typePath="./src/${typeName}.ts"
     echo "create schema in '${fileName}' from file '${typePath}'"
-    ./node_modules/.bin/ts-json-schema-generator --path $typePath --type $typeName > ./schemas/$fileName.schema.json
+    ./node_modules/.bin/ts-json-schema-generator --path $typePath --type $typeName > ./dist/schemas/$fileName.schema.json
 done
 echo $@
 ts-node ./scripts/putSchemasInTypeFile.ts $@

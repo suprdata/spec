@@ -13,8 +13,9 @@ const tsSchemaFileContent = schemaList
     const lowerCasedName = name.charAt(0).toLowerCase() + name.slice(1);
     return `export const ${lowerCasedName}Schema = \`${schema}\`;`;
   })
+  .map((constLine) => constLine + "\n")
   .reduce<string>((agg, constLine) => {
-    return `${agg}\n${constLine}\n`;
+    return agg + constLine
   }, '');
 
 fs.writeFileSync('./src/schemas.ts', tsSchemaFileContent);
