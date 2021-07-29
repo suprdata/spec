@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/suprdata/spec/compare/v0.1.1...v0.1.2) (2021-07-29)
+
+
+### Features
+
+* Correct files by linting guidelines. ([6618b57](https://github.com/suprdata/spec/commit/6618b5743c58c45476b54efdb2fee58d3bd88535))
+* Enforce linting before building artifacts ([5e2c6e6](https://github.com/suprdata/spec/commit/5e2c6e6c4cda86534d242edc9a735a4637ed8e67))
+* Fix linting issues with typescript >=4.3 ([0c20a8b](https://github.com/suprdata/spec/commit/0c20a8ba115129cbe797e09586044441f638e8bc))
+
+
+### Bug Fixes
+
+* Avoid breaking release cycle when nothing commit after build ([9c1d70b](https://github.com/suprdata/spec/commit/9c1d70bee1c9bc50b3b842d74b8ad02a7e0e27c1))
+
 ### [0.1.1](https://github.com/suprdata/spec/compare/v0.1.0...v0.1.1) (2021-07-29)
 
 
