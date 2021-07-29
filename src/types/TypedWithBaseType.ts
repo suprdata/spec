@@ -1,4 +1,4 @@
-import {Typed} from './Typed';
+import { Typed } from './Typed';
 
 export interface TypedWithBaseType extends Typed {
   '@baseType'?: string;

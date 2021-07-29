@@ -1,12 +1,12 @@
-import {Id} from './types/Id';
-import {TypedWithBaseType} from './types/TypedWithBaseType';
-import {Timestamps} from './types/Timestamps';
-import {AccessRightsManagement} from './types/AccessRightsManagement';
-import {ValidFor} from './types/ValidFor';
-import {LifecycleStatus} from './types/LifecycleStatus';
-import {Common} from './types/Common';
-import {Specification} from './Specification';
-import {CharacteristicValueUse} from './CharacteristicValueUse';
+import { Id } from './types/Id';
+import { TypedWithBaseType } from './types/TypedWithBaseType';
+import { Timestamps } from './types/Timestamps';
+import { AccessRightsManagement } from './types/AccessRightsManagement';
+import { ValidFor } from './types/ValidFor';
+import { LifecycleStatus } from './types/LifecycleStatus';
+import { Common } from './types/Common';
+import { Specification } from './Specification';
+import { CharacteristicValueUse } from './CharacteristicValueUse';
 
 export interface Thing extends Id,
   TypedWithBaseType,

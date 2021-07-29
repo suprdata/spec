@@ -1,5 +1,5 @@
-import {AccessRights} from './AccessRights';
-import {Common} from './types/Common';
+import { AccessRights } from './AccessRights';
+import { Common } from './types/Common';
 
 export interface CharacteristicValueResource extends Common {
   byte?: number;

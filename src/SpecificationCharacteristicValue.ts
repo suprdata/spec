@@ -1,5 +1,5 @@
-import {AccessRightsManagement} from './types/AccessRightsManagement';
-import {SpecificationCharacteristicValueResource} from './SpecificationCharacteristicValueResource';
+import { AccessRightsManagement } from './types/AccessRightsManagement';
+import { SpecificationCharacteristicValueResource } from './SpecificationCharacteristicValueResource';
 
 export interface SpecificationCharacteristicValue extends AccessRightsManagement {
   isDefault?: boolean;

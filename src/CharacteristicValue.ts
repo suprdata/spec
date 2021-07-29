@@ -1,4 +1,4 @@
-import {CharacteristicValueResource} from './CharacteristicValueResource';
+import { CharacteristicValueResource } from './CharacteristicValueResource';
 
 /**
  * Needs to have either value or valueResource.

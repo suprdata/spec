@@ -1,4 +1,4 @@
-import {AccessRights} from '../AccessRights';
+import { AccessRights } from '../AccessRights';
 
 export interface AccessRightsManagement {
   accessRights?: AccessRights[];

@@ -1,5 +1,5 @@
-import {CharacteristicValue} from './CharacteristicValue';
-import {SpecificationCharacteristicValueUse} from './SpecificationCharacteristicValueUse';
+import { CharacteristicValue } from './CharacteristicValue';
+import { SpecificationCharacteristicValueUse } from './SpecificationCharacteristicValueUse';
 
 export interface CharacteristicValueUse {
   commonSpecCharValueUse: SpecificationCharacteristicValueUse;
