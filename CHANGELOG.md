@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/suprdata/spec/compare/v0.1.3...v0.1.4) (2021-07-29)
+
+
+### Features
+
+* Add helpers and update documentation ([d0ca00e](https://github.com/suprdata/spec/commit/d0ca00e1527a1c5a5c4f43d88ed920e24a9b1b64))
+
 ### [0.1.3](https://github.com/suprdata/spec/compare/v0.1.2...v0.1.3) (2021-07-29)
 
 
