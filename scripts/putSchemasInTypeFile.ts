@@ -6,7 +6,7 @@ const tsSchemaFileContent = schemaList
   .map((schemaName: string) => {
     return {
       name: schemaName,
-      schema: fs.readFileSync(`./schemas/${schemaName}.schema.json`, 'utf-8')
+      schema: fs.readFileSync(`./dist/schemas/${schemaName}.schema.json`, 'utf-8')
     };
   })
   .map(({name, schema}) => {
