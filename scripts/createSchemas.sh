@@ -2,7 +2,7 @@
 
 echo "Please run this script from the project root directory"
 
-mkdir -p schemas
+mkdir -p './dist/schemas'
 # npm install
 echo $@
 for typeName in "$@"

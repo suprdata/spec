@@ -18,9 +18,9 @@
     "test:watch": "./node_modules/jest/bin/jest.js tests --watch",
     "test:coverage": "./node_modules/jest/bin/jest.js tests --coverage",
     "test:watch:coverage": "./node_modules/jest/bin/jest.js tests --watch --coverage",
-    "test": "npm run lint; npm run test:run",
-    "build": "rm -rf ./lib && npm run lint && npm run build:lib",
-    "build:lib": "./scripts/buildLibrary.sh",
+    "test": "npm run lint; node tests/test-build.js",
+    "build": "rm -rf ./dist && npm run test && npm run build:lib",
+    "build:lib": "node scripts/build.js",
     "release": "npm run build && npx standard-version && git push --follow-tags origin master && npm publish --access public"
   },
   "dependencies": {

@@ -1,4 +1,3 @@
-
 export const accessRightsSchema = `{
   "$ref": "#/definitions/AccessRights",
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -24,7 +23,6 @@ export const accessRightsSchema = `{
   }
 }
 `;
-
 export const actionSchema = `{
   "$ref": "#/definitions/Action",
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -107,7 +105,6 @@ export const actionSchema = `{
   }
 }
 `;
-
 export const categorySchema = `{
   "$ref": "#/definitions/Category",
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -502,7 +499,6 @@ export const categorySchema = `{
   }
 }
 `;
-
 export const characteristicValueSchema = `{
   "$ref": "#/definitions/CharacteristicValue",
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -573,7 +569,6 @@ export const characteristicValueSchema = `{
   }
 }
 `;
-
 export const characteristicValueResourceSchema = `{
   "$ref": "#/definitions/CharacteristicValueResource",
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -626,7 +621,6 @@ export const characteristicValueResourceSchema = `{
   }
 }
 `;
-
 export const characteristicValueUseSchema = `{
   "$ref": "#/definitions/CharacteristicValueUse",
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -805,7 +799,6 @@ export const characteristicValueUseSchema = `{
   }
 }
 `;
-
 export const specificationSchema = `{
   "$ref": "#/definitions/Specification",
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -1032,7 +1025,6 @@ export const specificationSchema = `{
   }
 }
 `;
-
 export const specificationCharacteristicValueSchema = `{
   "$ref": "#/definitions/SpecificationCharacteristicValue",
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -1116,7 +1108,6 @@ export const specificationCharacteristicValueSchema = `{
   }
 }
 `;
-
 export const specificationCharacteristicValueResourceSchema = `{
   "$ref": "#/definitions/SpecificationCharacteristicValueResource",
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -1139,7 +1130,6 @@ export const specificationCharacteristicValueResourceSchema = `{
   }
 }
 `;
-
 export const specificationCharacteristicValueUseSchema = `{
   "$ref": "#/definitions/SpecificationCharacteristicValueUse",
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -1253,7 +1243,6 @@ export const specificationCharacteristicValueUseSchema = `{
   }
 }
 `;
-
 export const thingSchema = `{
   "$ref": "#/definitions/Thing",
   "$schema": "http://json-schema.org/draft-07/schema#",
