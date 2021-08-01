@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/suprdata/spec/compare/v0.1.4...v0.1.5) (2021-08-01)
+
+
+### Features
+
+* Avoid pluralisation of entities ([24ff069](https://github.com/suprdata/spec/commit/24ff069f366af8a1b10b85f7a31f7f98dcb117e8))
+* Ignore windows tests ([e494f3b](https://github.com/suprdata/spec/commit/e494f3b9adf5c2b633b496e42f27d2d7f582055b))
+* Use standard-version and typescript as dev dependencies ([7c79196](https://github.com/suprdata/spec/commit/7c79196c6fa0a3f0516b46d88dffc7a4d7cad496))
+
 ### [0.1.4](https://github.com/suprdata/spec/compare/v0.1.3...v0.1.4) (2021-07-29)
 
 

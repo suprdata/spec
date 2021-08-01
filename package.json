@@ -1,6 +1,6 @@
 {
   "name": "@suprdata/spec",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Suprdata specification provided as types and json-schema",
   "main": "src/schemas.ts",
   "types": "dist/lib/schemas.d.ts",
