@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.2](https://github.com/suprdata/spec/compare/v0.2.1...v0.2.2) (2021-08-01)
+
+
+### Bug Fixes
+
+* Fix reference modelling ([1fc57a3](https://github.com/suprdata/spec/commit/1fc57a325dfe408332c3efd35adb82f2507eba9a))
+
 ### [0.2.1](https://github.com/suprdata/spec/compare/v0.2.0...v0.2.1) (2021-08-01)
 
 
