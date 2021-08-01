@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/suprdata/spec/compare/v0.2.0...v0.2.1) (2021-08-01)
+
+
+### Features
+
+* Avoid exiting release process when no build artifacts need to commit. ([7d1bb71](https://github.com/suprdata/spec/commit/7d1bb71d8cdfdc06739f08a96b02b0e9a1a59af7))
+* Implement reference helper ([4417fe5](https://github.com/suprdata/spec/commit/4417fe5b8c40040aa808c088fa64fd3748ca6ba6))
+* Implement reference helper ([53808fe](https://github.com/suprdata/spec/commit/53808fe2d9d3e9b03621e3c22eb6aa192c329ad0))
+* Use indexes to reference both schemas, helpers and types. ([e05a974](https://github.com/suprdata/spec/commit/e05a974e875dd93698fed622d041910f0b25ad1e))
+
 ## [0.2.0](https://github.com/suprdata/spec/compare/v0.1.5...v0.2.0) (2021-08-01)
 
 
