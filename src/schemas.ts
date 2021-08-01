@@ -1,8 +1,8 @@
-export const accessRightsSchema = `{
-  "$ref": "#/definitions/AccessRights",
+export const accessRightSchema = `{
+  "$ref": "#/definitions/AccessRight",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
-    "AccessRights": {
+    "AccessRight": {
       "additionalProperties": false,
       "properties": {
         "@id": {
@@ -27,7 +27,7 @@ export const actionSchema = `{
   "$ref": "#/definitions/Action",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
-    "AccessRights": {
+    "AccessRight": {
       "additionalProperties": false,
       "properties": {
         "@id": {
@@ -62,7 +62,7 @@ export const actionSchema = `{
         },
         "accessRights": {
           "items": {
-            "$ref": "#/definitions/AccessRights"
+            "$ref": "#/definitions/AccessRight"
           },
           "type": "array"
         },
@@ -109,7 +109,7 @@ export const categorySchema = `{
   "$ref": "#/definitions/Category",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
-    "AccessRights": {
+    "AccessRight": {
       "additionalProperties": false,
       "properties": {
         "@id": {
@@ -144,7 +144,7 @@ export const categorySchema = `{
         },
         "accessRights": {
           "items": {
-            "$ref": "#/definitions/AccessRights"
+            "$ref": "#/definitions/AccessRight"
           },
           "type": "array"
         },
@@ -216,7 +216,7 @@ export const categorySchema = `{
       "properties": {
         "accessRights": {
           "items": {
-            "$ref": "#/definitions/AccessRights"
+            "$ref": "#/definitions/AccessRight"
           },
           "type": "array"
         },
@@ -319,7 +319,7 @@ export const categorySchema = `{
       "properties": {
         "accessRights": {
           "items": {
-            "$ref": "#/definitions/AccessRights"
+            "$ref": "#/definitions/AccessRight"
           },
           "type": "array"
         },
@@ -422,7 +422,7 @@ export const categorySchema = `{
         },
         "accessRights": {
           "items": {
-            "$ref": "#/definitions/AccessRights"
+            "$ref": "#/definitions/AccessRight"
           },
           "type": "array"
         },
@@ -503,7 +503,7 @@ export const characteristicValueSchema = `{
   "$ref": "#/definitions/CharacteristicValue",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
-    "AccessRights": {
+    "AccessRight": {
       "additionalProperties": false,
       "properties": {
         "@id": {
@@ -544,7 +544,7 @@ export const characteristicValueSchema = `{
       "properties": {
         "accessRights": {
           "items": {
-            "$ref": "#/definitions/AccessRights"
+            "$ref": "#/definitions/AccessRight"
           },
           "type": "array"
         },
@@ -573,7 +573,7 @@ export const characteristicValueResourceSchema = `{
   "$ref": "#/definitions/CharacteristicValueResource",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
-    "AccessRights": {
+    "AccessRight": {
       "additionalProperties": false,
       "properties": {
         "@id": {
@@ -596,7 +596,7 @@ export const characteristicValueResourceSchema = `{
       "properties": {
         "accessRights": {
           "items": {
-            "$ref": "#/definitions/AccessRights"
+            "$ref": "#/definitions/AccessRight"
           },
           "type": "array"
         },
@@ -625,7 +625,7 @@ export const characteristicValueUseSchema = `{
   "$ref": "#/definitions/CharacteristicValueUse",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
-    "AccessRights": {
+    "AccessRight": {
       "additionalProperties": false,
       "properties": {
         "@id": {
@@ -666,7 +666,7 @@ export const characteristicValueUseSchema = `{
       "properties": {
         "accessRights": {
           "items": {
-            "$ref": "#/definitions/AccessRights"
+            "$ref": "#/definitions/AccessRight"
           },
           "type": "array"
         },
@@ -713,7 +713,7 @@ export const characteristicValueUseSchema = `{
       "properties": {
         "accessRights": {
           "items": {
-            "$ref": "#/definitions/AccessRights"
+            "$ref": "#/definitions/AccessRight"
           },
           "type": "array"
         },
@@ -803,7 +803,7 @@ export const specificationSchema = `{
   "$ref": "#/definitions/Specification",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
-    "AccessRights": {
+    "AccessRight": {
       "additionalProperties": false,
       "properties": {
         "@id": {
@@ -838,7 +838,7 @@ export const specificationSchema = `{
         },
         "accessRights": {
           "items": {
-            "$ref": "#/definitions/AccessRights"
+            "$ref": "#/definitions/AccessRight"
           },
           "type": "array"
         },
@@ -921,7 +921,7 @@ export const specificationSchema = `{
       "properties": {
         "accessRights": {
           "items": {
-            "$ref": "#/definitions/AccessRights"
+            "$ref": "#/definitions/AccessRight"
           },
           "type": "array"
         },
@@ -1029,7 +1029,7 @@ export const specificationCharacteristicValueSchema = `{
   "$ref": "#/definitions/SpecificationCharacteristicValue",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
-    "AccessRights": {
+    "AccessRight": {
       "additionalProperties": false,
       "properties": {
         "@id": {
@@ -1052,7 +1052,7 @@ export const specificationCharacteristicValueSchema = `{
       "properties": {
         "accessRights": {
           "items": {
-            "$ref": "#/definitions/AccessRights"
+            "$ref": "#/definitions/AccessRight"
           },
           "type": "array"
         },
@@ -1134,7 +1134,7 @@ export const specificationCharacteristicValueUseSchema = `{
   "$ref": "#/definitions/SpecificationCharacteristicValueUse",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
-    "AccessRights": {
+    "AccessRight": {
       "additionalProperties": false,
       "properties": {
         "@id": {
@@ -1157,7 +1157,7 @@ export const specificationCharacteristicValueUseSchema = `{
       "properties": {
         "accessRights": {
           "items": {
-            "$ref": "#/definitions/AccessRights"
+            "$ref": "#/definitions/AccessRight"
           },
           "type": "array"
         },
@@ -1247,7 +1247,7 @@ export const thingSchema = `{
   "$ref": "#/definitions/Thing",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
-    "AccessRights": {
+    "AccessRight": {
       "additionalProperties": false,
       "properties": {
         "@id": {
@@ -1282,7 +1282,7 @@ export const thingSchema = `{
         },
         "accessRights": {
           "items": {
-            "$ref": "#/definitions/AccessRights"
+            "$ref": "#/definitions/AccessRight"
           },
           "type": "array"
         },
@@ -1327,7 +1327,7 @@ export const thingSchema = `{
       "properties": {
         "accessRights": {
           "items": {
-            "$ref": "#/definitions/AccessRights"
+            "$ref": "#/definitions/AccessRight"
           },
           "type": "array"
         },
@@ -1430,7 +1430,7 @@ export const thingSchema = `{
       "properties": {
         "accessRights": {
           "items": {
-            "$ref": "#/definitions/AccessRights"
+            "$ref": "#/definitions/AccessRight"
           },
           "type": "array"
         },
@@ -1533,7 +1533,7 @@ export const thingSchema = `{
         },
         "accessRights": {
           "items": {
-            "$ref": "#/definitions/AccessRights"
+            "$ref": "#/definitions/AccessRight"
           },
           "type": "array"
         },
