@@ -3,6 +3,7 @@ module.exports = {
   ignorePatterns: [
     'src/schemas.ts',
     'tests/test-build.js',
-    'scripts'
+    'scripts',
+    'dist'
   ]
 }
