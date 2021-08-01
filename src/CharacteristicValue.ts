@@ -1,6 +1,4 @@
 import { CharacteristicValueResource } from './CharacteristicValueResource';
-
-// eslint-disable-next-line import/no-cycle
 import { Thing } from './Thing';
 
 /**

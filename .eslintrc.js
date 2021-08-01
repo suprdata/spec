@@ -5,5 +5,8 @@ module.exports = {
     'tests/test-build.js',
     'scripts',
     'dist'
-  ]
+  ],
+  rules: {
+    'import/no-cycle': 'off'
+  }
 }
