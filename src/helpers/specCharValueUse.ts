@@ -75,6 +75,26 @@ export const resourceSpecCharValue = (
   name,
   'resource',
   {
+    isReference: false,
+    isResource: true,
+    specificationCharacteristicValue: {
+      editable: false,
+      producible: false,
+      visible: true,
+      isResource: true,
+      valueResource: { ...config ?? {} },
+    },
+  },
+);
+export const referenceSpecCharValue = (
+  id: string, name?: string, config?: SpecificationCharacteristicValueResource,
+): SpecificationCharacteristicValueUse => specCharValueGenerator(
+  id,
+  name,
+  'reference',
+  {
+    isReference: true,
+    isResource: false,
     specificationCharacteristicValue: {
       editable: false,
       producible: false,
