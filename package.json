@@ -21,7 +21,7 @@
     "test": "npm run lint; node tests/test-build.js",
     "build": "rm -rf ./dist && npm run test && npm run build:lib",
     "build:lib": "node scripts/build.js",
-    "release": "npm run build && git add ./src/schemas.ts && git commit -m 'chore(release): Build artifacts' && npx standard-version && npm publish --access public",
+    "release": "npm run build && git add ./src/schemas.ts && git diff-index --quiet HEAD || git commit -m 'chore(release): Build artifacts' && npx standard-version && npm publish --access public",
     "prebublishOnly": "git push --follow-tags origin master"
   },
   "dependencies": {
