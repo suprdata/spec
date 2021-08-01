@@ -1,5 +1,6 @@
 import { CharacteristicValueUse } from '../CharacteristicValueUse';
 import { CharacteristicValueResource } from '../CharacteristicValueResource';
+import { Thing } from '../Thing';
 
 export const simpleCharValueUse = (
   specCharValueUseId: string,
@@ -24,9 +25,21 @@ export const resourceCharValueUse = (
     '@id': specCharValueUseId,
   },
   commonCharValues: resources.map(
-    (characteristicValueResource: any) => ({
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    (characteristicValueResource: CharacteristicValueResource) => ({
       characteristicValueResource,
+    }),
+  ),
+});
+export const referenceCharValueUse = (
+  specCharValueUseId: string,
+  resources: CharacteristicValueResource[],
+): CharacteristicValueUse => ({
+  commonSpecCharValueUse: {
+    '@id': specCharValueUseId,
+  },
+  commonCharValues: resources.map(
+    (characteristicValueReference: Thing) => ({
+      characteristicValueReference,
     }),
   ),
 });
