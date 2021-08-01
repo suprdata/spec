@@ -197,6 +197,9 @@ export const categorySchema = `{
       "additionalProperties": false,
       "description": "Needs to have either value or valueResource.",
       "properties": {
+        "characteristicValueReference": {
+          "$ref": "#/definitions/Thing"
+        },
         "characteristicValueResource": {
           "$ref": "#/definitions/CharacteristicValueResource"
         },
@@ -381,6 +384,12 @@ export const categorySchema = `{
         "description": {
           "type": "string"
         },
+        "isReference": {
+          "type": "boolean"
+        },
+        "isResource": {
+          "type": "boolean"
+        },
         "maxCardinality": {
           "type": "number"
         },
@@ -521,10 +530,52 @@ export const characteristicValueSchema = `{
       ],
       "type": "object"
     },
+    "Action": {
+      "additionalProperties": false,
+      "properties": {
+        "@context": {
+          "type": "string"
+        },
+        "@id": {
+          "type": "string"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "@version": {
+          "type": "string"
+        },
+        "accessRights": {
+          "items": {
+            "$ref": "#/definitions/AccessRight"
+          },
+          "type": "array"
+        },
+        "description": {
+          "type": "string"
+        },
+        "lifecycleStatus": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "#/definitions/TimePeriod"
+        }
+      },
+      "required": [
+        "@id"
+      ],
+      "type": "object"
+    },
     "CharacteristicValue": {
       "additionalProperties": false,
       "description": "Needs to have either value or valueResource.",
       "properties": {
+        "characteristicValueReference": {
+          "$ref": "#/definitions/Thing"
+        },
         "characteristicValueResource": {
           "$ref": "#/definitions/CharacteristicValueResource"
         },
@@ -564,6 +615,270 @@ export const characteristicValueSchema = `{
           "type": "string"
         }
       },
+      "type": "object"
+    },
+    "CharacteristicValueUse": {
+      "additionalProperties": false,
+      "properties": {
+        "commonCharValues": {
+          "description": "Needs to correspondent to a subset of values of CommonCharValueUse.commonSpecCharValueUse\n\nValues are always a real list if maxCardinality > 1 or not defined Values are always single values if maxCardinality = 1",
+          "items": {
+            "$ref": "#/definitions/CharacteristicValue"
+          },
+          "type": "array"
+        },
+        "commonSpecCharValueUse": {
+          "$ref": "#/definitions/SpecificationCharacteristicValueUse"
+        }
+      },
+      "required": [
+        "commonSpecCharValueUse",
+        "commonCharValues"
+      ],
+      "type": "object"
+    },
+    "Specification": {
+      "additionalProperties": false,
+      "properties": {
+        "@context": {
+          "type": "string"
+        },
+        "@id": {
+          "type": "string"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "@version": {
+          "type": "string"
+        },
+        "actions": {
+          "items": {
+            "$ref": "#/definitions/Action"
+          },
+          "type": "array"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "isBundle": {
+          "type": "boolean"
+        },
+        "lifecycleStatus": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "specificationCharacteristicValueUse": {
+          "items": {
+            "$ref": "#/definitions/SpecificationCharacteristicValueUse"
+          },
+          "type": "array"
+        },
+        "updatedAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "#/definitions/TimePeriod"
+        }
+      },
+      "required": [
+        "@id"
+      ],
+      "type": "object"
+    },
+    "SpecificationCharacteristicValue": {
+      "additionalProperties": false,
+      "properties": {
+        "accessRights": {
+          "items": {
+            "$ref": "#/definitions/AccessRight"
+          },
+          "type": "array"
+        },
+        "editable": {
+          "type": "boolean"
+        },
+        "isDefault": {
+          "type": "boolean"
+        },
+        "isResource": {
+          "type": "boolean"
+        },
+        "producible": {
+          "description": "allow or disallow generated content from any source with rules based on CommonSpecCharValueUse for example comments of any news",
+          "type": "boolean"
+        },
+        "rangeInterval": {
+          "type": "string"
+        },
+        "value": {
+        },
+        "valueFrom": {
+        },
+        "valueRegex": {
+          "type": "string"
+        },
+        "valueResource": {
+          "$ref": "#/definitions/SpecificationCharacteristicValueResource"
+        },
+        "valueTo": {
+        },
+        "visible": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "SpecificationCharacteristicValueResource": {
+      "additionalProperties": false,
+      "properties": {
+        "maxBytes": {
+          "type": "number"
+        },
+        "mimeTypes": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "SpecificationCharacteristicValueUse": {
+      "additionalProperties": false,
+      "properties": {
+        "@id": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "isReference": {
+          "type": "boolean"
+        },
+        "isResource": {
+          "type": "boolean"
+        },
+        "maxCardinality": {
+          "type": "number"
+        },
+        "minCardinality": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "specificationCharacteristicValue": {
+          "$ref": "#/definitions/SpecificationCharacteristicValue"
+        },
+        "valueType": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@id"
+      ],
+      "type": "object"
+    },
+    "Thing": {
+      "additionalProperties": false,
+      "properties": {
+        "@baseType": {
+          "type": "string"
+        },
+        "@context": {
+          "type": "string"
+        },
+        "@id": {
+          "type": "string"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "@version": {
+          "type": "string"
+        },
+        "accessRights": {
+          "items": {
+            "$ref": "#/definitions/AccessRight"
+          },
+          "type": "array"
+        },
+        "characteristicValueUse": {
+          "description": "values need to correspondent to values of spec",
+          "items": {
+            "$ref": "#/definitions/CharacteristicValueUse"
+          },
+          "type": "array"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "isBundle": {
+          "type": "boolean"
+        },
+        "lifecycleStatus": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "relatedThings": {
+          "items": {
+            "$ref": "#/definitions/Thing"
+          },
+          "type": "array"
+        },
+        "specification": {
+          "$ref": "#/definitions/Specification"
+        },
+        "subThings": {
+          "items": {
+            "$ref": "#/definitions/Thing"
+          },
+          "type": "array"
+        },
+        "updatedAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "#/definitions/TimePeriod"
+        }
+      },
+      "required": [
+        "@id",
+        "specification"
+      ],
+      "type": "object"
+    },
+    "TimePeriod": {
+      "additionalProperties": false,
+      "properties": {
+        "from": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "to": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "required": [
+        "from",
+        "to"
+      ],
       "type": "object"
     }
   }
@@ -643,10 +958,52 @@ export const characteristicValueUseSchema = `{
       ],
       "type": "object"
     },
+    "Action": {
+      "additionalProperties": false,
+      "properties": {
+        "@context": {
+          "type": "string"
+        },
+        "@id": {
+          "type": "string"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "@version": {
+          "type": "string"
+        },
+        "accessRights": {
+          "items": {
+            "$ref": "#/definitions/AccessRight"
+          },
+          "type": "array"
+        },
+        "description": {
+          "type": "string"
+        },
+        "lifecycleStatus": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "#/definitions/TimePeriod"
+        }
+      },
+      "required": [
+        "@id"
+      ],
+      "type": "object"
+    },
     "CharacteristicValue": {
       "additionalProperties": false,
       "description": "Needs to have either value or valueResource.",
       "properties": {
+        "characteristicValueReference": {
+          "$ref": "#/definitions/Thing"
+        },
         "characteristicValueResource": {
           "$ref": "#/definitions/CharacteristicValueResource"
         },
@@ -705,6 +1062,62 @@ export const characteristicValueUseSchema = `{
       "required": [
         "commonSpecCharValueUse",
         "commonCharValues"
+      ],
+      "type": "object"
+    },
+    "Specification": {
+      "additionalProperties": false,
+      "properties": {
+        "@context": {
+          "type": "string"
+        },
+        "@id": {
+          "type": "string"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "@version": {
+          "type": "string"
+        },
+        "actions": {
+          "items": {
+            "$ref": "#/definitions/Action"
+          },
+          "type": "array"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "isBundle": {
+          "type": "boolean"
+        },
+        "lifecycleStatus": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "specificationCharacteristicValueUse": {
+          "items": {
+            "$ref": "#/definitions/SpecificationCharacteristicValueUse"
+          },
+          "type": "array"
+        },
+        "updatedAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "#/definitions/TimePeriod"
+        }
+      },
+      "required": [
+        "@id"
       ],
       "type": "object"
     },
@@ -775,6 +1188,12 @@ export const characteristicValueUseSchema = `{
         "description": {
           "type": "string"
         },
+        "isReference": {
+          "type": "boolean"
+        },
+        "isResource": {
+          "type": "boolean"
+        },
         "maxCardinality": {
           "type": "number"
         },
@@ -793,6 +1212,100 @@ export const characteristicValueUseSchema = `{
       },
       "required": [
         "@id"
+      ],
+      "type": "object"
+    },
+    "Thing": {
+      "additionalProperties": false,
+      "properties": {
+        "@baseType": {
+          "type": "string"
+        },
+        "@context": {
+          "type": "string"
+        },
+        "@id": {
+          "type": "string"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "@version": {
+          "type": "string"
+        },
+        "accessRights": {
+          "items": {
+            "$ref": "#/definitions/AccessRight"
+          },
+          "type": "array"
+        },
+        "characteristicValueUse": {
+          "description": "values need to correspondent to values of spec",
+          "items": {
+            "$ref": "#/definitions/CharacteristicValueUse"
+          },
+          "type": "array"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "isBundle": {
+          "type": "boolean"
+        },
+        "lifecycleStatus": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "relatedThings": {
+          "items": {
+            "$ref": "#/definitions/Thing"
+          },
+          "type": "array"
+        },
+        "specification": {
+          "$ref": "#/definitions/Specification"
+        },
+        "subThings": {
+          "items": {
+            "$ref": "#/definitions/Thing"
+          },
+          "type": "array"
+        },
+        "updatedAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "#/definitions/TimePeriod"
+        }
+      },
+      "required": [
+        "@id",
+        "specification"
+      ],
+      "type": "object"
+    },
+    "TimePeriod": {
+      "additionalProperties": false,
+      "properties": {
+        "from": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "to": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "required": [
+        "from",
+        "to"
       ],
       "type": "object"
     }
@@ -982,6 +1495,12 @@ export const specificationSchema = `{
         },
         "description": {
           "type": "string"
+        },
+        "isReference": {
+          "type": "boolean"
+        },
+        "isResource": {
+          "type": "boolean"
         },
         "maxCardinality": {
           "type": "number"
@@ -1219,6 +1738,12 @@ export const specificationCharacteristicValueUseSchema = `{
         "description": {
           "type": "string"
         },
+        "isReference": {
+          "type": "boolean"
+        },
+        "isResource": {
+          "type": "boolean"
+        },
         "maxCardinality": {
           "type": "number"
         },
@@ -1308,6 +1833,9 @@ export const thingSchema = `{
       "additionalProperties": false,
       "description": "Needs to have either value or valueResource.",
       "properties": {
+        "characteristicValueReference": {
+          "$ref": "#/definitions/Thing"
+        },
         "characteristicValueResource": {
           "$ref": "#/definitions/CharacteristicValueResource"
         },
@@ -1491,6 +2019,12 @@ export const thingSchema = `{
         },
         "description": {
           "type": "string"
+        },
+        "isReference": {
+          "type": "boolean"
+        },
+        "isResource": {
+          "type": "boolean"
         },
         "maxCardinality": {
           "type": "number"
