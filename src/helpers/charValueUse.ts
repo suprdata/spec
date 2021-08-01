@@ -32,12 +32,12 @@ export const resourceCharValueUse = (
 });
 export const referenceCharValueUse = (
   specCharValueUseId: string,
-  resources: CharacteristicValueResource[],
+  references: Thing[],
 ): CharacteristicValueUse => ({
   commonSpecCharValueUse: {
     '@id': specCharValueUseId,
   },
-  commonCharValues: resources.map(
+  commonCharValues: references.map(
     (characteristicValueReference: Thing) => ({
       characteristicValueReference,
     }),

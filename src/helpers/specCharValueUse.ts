@@ -87,7 +87,7 @@ export const resourceSpecCharValue = (
   },
 );
 export const referenceSpecCharValue = (
-  id: string, name?: string, config?: SpecificationCharacteristicValueResource,
+  id: string, name?: string,
 ): SpecificationCharacteristicValueUse => specCharValueGenerator(
   id,
   name,
@@ -100,7 +100,6 @@ export const referenceSpecCharValue = (
       producible: false,
       visible: true,
       isResource: true,
-      valueResource: { ...config ?? {} },
     },
   },
 );
