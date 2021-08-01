@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/suprdata/spec/compare/v0.1.5...v0.2.0) (2021-08-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* Allow referencing other things from characteristicValue
+
+### Features
+
+* Allow cycle dependencies for type referencing ([3e1ca22](https://github.com/suprdata/spec/commit/3e1ca2255bd1ac2ac67ad8372ff5767ee34a7af8))
+* Allow referencing other things from characteristicValue ([345eaa2](https://github.com/suprdata/spec/commit/345eaa242be915dbb167464ac6277f1ec11110c8))
+
+
+### Bug Fixes
+
+* Avoid Linting of distribution ([6f39164](https://github.com/suprdata/spec/commit/6f391640f740d9a4663a72a29e89b454656b8fc1))
+
 ### [0.1.5](https://github.com/suprdata/spec/compare/v0.1.4...v0.1.5) (2021-08-01)
 
 
