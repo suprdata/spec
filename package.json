@@ -2,8 +2,8 @@
   "name": "@suprdata/spec",
   "version": "0.2.0",
   "description": "Suprdata specification provided as types and json-schema",
-  "main": "src/schemas.ts",
-  "types": "dist/lib/schemas.d.ts",
+  "main": "src/index.ts",
+  "types": "dist/lib/index.d.ts",
   "files": [
     "src",
     "dist",
