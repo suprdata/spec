@@ -6,5 +6,7 @@ export interface SpecificationCharacteristicValueUse extends Id, Common {
   valueType?: string;// a type could be string, whereas a mimetype needs to be a correct mimetype
   minCardinality?: number;
   maxCardinality?: number;
+  isReference?: boolean;
+  isResource?: boolean;
   specificationCharacteristicValue?: undefined | SpecificationCharacteristicValue;
 }
