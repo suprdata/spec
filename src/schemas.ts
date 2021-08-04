@@ -346,6 +346,9 @@ export const categorySchema = `{
         },
         "valueFrom": {
         },
+        "valueReferenceSpecification": {
+          "$ref": "#/definitions/Specification"
+        },
         "valueRegex": {
           "type": "string"
         },
@@ -721,6 +724,9 @@ export const characteristicValueSchema = `{
         "value": {
         },
         "valueFrom": {
+        },
+        "valueReferenceSpecification": {
+          "$ref": "#/definitions/Specification"
         },
         "valueRegex": {
           "type": "string"
@@ -1150,6 +1156,9 @@ export const characteristicValueUseSchema = `{
         },
         "valueFrom": {
         },
+        "valueReferenceSpecification": {
+          "$ref": "#/definitions/Specification"
+        },
         "valueRegex": {
           "type": "string"
         },
@@ -1458,6 +1467,9 @@ export const specificationSchema = `{
         },
         "valueFrom": {
         },
+        "valueReferenceSpecification": {
+          "$ref": "#/definitions/Specification"
+        },
         "valueRegex": {
           "type": "string"
         },
@@ -1566,104 +1578,94 @@ export const specificationCharacteristicValueSchema = `{
       ],
       "type": "object"
     },
-    "SpecificationCharacteristicValue": {
+    "Action": {
       "additionalProperties": false,
       "properties": {
+        "@context": {
+          "type": "string"
+        },
+        "@id": {
+          "type": "string"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "@version": {
+          "type": "string"
+        },
         "accessRights": {
           "items": {
             "$ref": "#/definitions/AccessRight"
           },
           "type": "array"
         },
-        "editable": {
-          "type": "boolean"
-        },
-        "isDefault": {
-          "type": "boolean"
-        },
-        "isResource": {
-          "type": "boolean"
-        },
-        "producible": {
-          "description": "allow or disallow generated content from any source with rules based on CommonSpecCharValueUse for example comments of any news",
-          "type": "boolean"
-        },
-        "rangeInterval": {
+        "description": {
           "type": "string"
         },
-        "value": {
-        },
-        "valueFrom": {
-        },
-        "valueRegex": {
+        "lifecycleStatus": {
           "type": "string"
         },
-        "valueResource": {
-          "$ref": "#/definitions/SpecificationCharacteristicValueResource"
+        "name": {
+          "type": "string"
         },
-        "valueTo": {
-        },
-        "visible": {
-          "type": "boolean"
+        "validFor": {
+          "$ref": "#/definitions/TimePeriod"
         }
       },
+      "required": [
+        "@id"
+      ],
       "type": "object"
     },
-    "SpecificationCharacteristicValueResource": {
+    "Specification": {
       "additionalProperties": false,
       "properties": {
-        "maxBytes": {
-          "type": "number"
-        },
-        "mimeTypes": {
+        "@context": {
           "type": "string"
         },
-        "name": {
-          "type": "string"
-        }
-      },
-      "type": "object"
-    }
-  }
-}
-`;
-export const specificationCharacteristicValueResourceSchema = `{
-  "$ref": "#/definitions/SpecificationCharacteristicValueResource",
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "definitions": {
-    "SpecificationCharacteristicValueResource": {
-      "additionalProperties": false,
-      "properties": {
-        "maxBytes": {
-          "type": "number"
-        },
-        "mimeTypes": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        }
-      },
-      "type": "object"
-    }
-  }
-}
-`;
-export const specificationCharacteristicValueUseSchema = `{
-  "$ref": "#/definitions/SpecificationCharacteristicValueUse",
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "definitions": {
-    "AccessRight": {
-      "additionalProperties": false,
-      "properties": {
         "@id": {
+          "type": "string"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "@version": {
+          "type": "string"
+        },
+        "actions": {
+          "items": {
+            "$ref": "#/definitions/Action"
+          },
+          "type": "array"
+        },
+        "createdAt": {
+          "format": "date-time",
           "type": "string"
         },
         "description": {
           "type": "string"
         },
+        "isBundle": {
+          "type": "boolean"
+        },
+        "lifecycleStatus": {
+          "type": "string"
+        },
         "name": {
           "type": "string"
+        },
+        "specificationCharacteristicValueUse": {
+          "items": {
+            "$ref": "#/definitions/SpecificationCharacteristicValueUse"
+          },
+          "type": "array"
+        },
+        "updatedAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "#/definitions/TimePeriod"
         }
       },
       "required": [
@@ -1699,6 +1701,9 @@ export const specificationCharacteristicValueUseSchema = `{
         "value": {
         },
         "valueFrom": {
+        },
+        "valueReferenceSpecification": {
+          "$ref": "#/definitions/Specification"
         },
         "valueRegex": {
           "type": "string"
@@ -1762,6 +1767,281 @@ export const specificationCharacteristicValueUseSchema = `{
       },
       "required": [
         "@id"
+      ],
+      "type": "object"
+    },
+    "TimePeriod": {
+      "additionalProperties": false,
+      "properties": {
+        "from": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "to": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "required": [
+        "from",
+        "to"
+      ],
+      "type": "object"
+    }
+  }
+}
+`;
+export const specificationCharacteristicValueResourceSchema = `{
+  "$ref": "#/definitions/SpecificationCharacteristicValueResource",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "SpecificationCharacteristicValueResource": {
+      "additionalProperties": false,
+      "properties": {
+        "maxBytes": {
+          "type": "number"
+        },
+        "mimeTypes": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  }
+}
+`;
+export const specificationCharacteristicValueUseSchema = `{
+  "$ref": "#/definitions/SpecificationCharacteristicValueUse",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "AccessRight": {
+      "additionalProperties": false,
+      "properties": {
+        "@id": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@id"
+      ],
+      "type": "object"
+    },
+    "Action": {
+      "additionalProperties": false,
+      "properties": {
+        "@context": {
+          "type": "string"
+        },
+        "@id": {
+          "type": "string"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "@version": {
+          "type": "string"
+        },
+        "accessRights": {
+          "items": {
+            "$ref": "#/definitions/AccessRight"
+          },
+          "type": "array"
+        },
+        "description": {
+          "type": "string"
+        },
+        "lifecycleStatus": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "#/definitions/TimePeriod"
+        }
+      },
+      "required": [
+        "@id"
+      ],
+      "type": "object"
+    },
+    "Specification": {
+      "additionalProperties": false,
+      "properties": {
+        "@context": {
+          "type": "string"
+        },
+        "@id": {
+          "type": "string"
+        },
+        "@type": {
+          "type": "string"
+        },
+        "@version": {
+          "type": "string"
+        },
+        "actions": {
+          "items": {
+            "$ref": "#/definitions/Action"
+          },
+          "type": "array"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "isBundle": {
+          "type": "boolean"
+        },
+        "lifecycleStatus": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "specificationCharacteristicValueUse": {
+          "items": {
+            "$ref": "#/definitions/SpecificationCharacteristicValueUse"
+          },
+          "type": "array"
+        },
+        "updatedAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "validFor": {
+          "$ref": "#/definitions/TimePeriod"
+        }
+      },
+      "required": [
+        "@id"
+      ],
+      "type": "object"
+    },
+    "SpecificationCharacteristicValue": {
+      "additionalProperties": false,
+      "properties": {
+        "accessRights": {
+          "items": {
+            "$ref": "#/definitions/AccessRight"
+          },
+          "type": "array"
+        },
+        "editable": {
+          "type": "boolean"
+        },
+        "isDefault": {
+          "type": "boolean"
+        },
+        "isResource": {
+          "type": "boolean"
+        },
+        "producible": {
+          "description": "allow or disallow generated content from any source with rules based on CommonSpecCharValueUse for example comments of any news",
+          "type": "boolean"
+        },
+        "rangeInterval": {
+          "type": "string"
+        },
+        "value": {
+        },
+        "valueFrom": {
+        },
+        "valueReferenceSpecification": {
+          "$ref": "#/definitions/Specification"
+        },
+        "valueRegex": {
+          "type": "string"
+        },
+        "valueResource": {
+          "$ref": "#/definitions/SpecificationCharacteristicValueResource"
+        },
+        "valueTo": {
+        },
+        "visible": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "SpecificationCharacteristicValueResource": {
+      "additionalProperties": false,
+      "properties": {
+        "maxBytes": {
+          "type": "number"
+        },
+        "mimeTypes": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "SpecificationCharacteristicValueUse": {
+      "additionalProperties": false,
+      "properties": {
+        "@id": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "isReference": {
+          "type": "boolean"
+        },
+        "isResource": {
+          "type": "boolean"
+        },
+        "maxCardinality": {
+          "type": "number"
+        },
+        "minCardinality": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "specificationCharacteristicValue": {
+          "$ref": "#/definitions/SpecificationCharacteristicValue"
+        },
+        "valueType": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@id"
+      ],
+      "type": "object"
+    },
+    "TimePeriod": {
+      "additionalProperties": false,
+      "properties": {
+        "from": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "to": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "required": [
+        "from",
+        "to"
       ],
       "type": "object"
     }
@@ -1981,6 +2261,9 @@ export const thingSchema = `{
         "value": {
         },
         "valueFrom": {
+        },
+        "valueReferenceSpecification": {
+          "$ref": "#/definitions/Specification"
         },
         "valueRegex": {
           "type": "string"
