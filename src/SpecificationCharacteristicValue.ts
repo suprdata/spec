@@ -1,5 +1,6 @@
 import { AccessRightManagement } from './types/AccessRightManagement';
 import { SpecificationCharacteristicValueResource } from './SpecificationCharacteristicValueResource';
+import { Specification } from './Specification';
 
 export interface SpecificationCharacteristicValue extends AccessRightManagement {
   isDefault?: boolean;
@@ -18,4 +19,5 @@ export interface SpecificationCharacteristicValue extends AccessRightManagement 
   valueRegex?: string;
   value?: any;
   valueResource?: undefined | SpecificationCharacteristicValueResource;
+  valueReferenceSpecification?: undefined | Specification;
 }

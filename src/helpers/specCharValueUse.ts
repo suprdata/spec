@@ -1,5 +1,6 @@
 import { SpecificationCharacteristicValueUse } from '../SpecificationCharacteristicValueUse';
 import { SpecificationCharacteristicValueResource } from '../SpecificationCharacteristicValueResource';
+import { Specification } from '../Specification';
 
 export const specCharValueGenerator = (
   id: string, name?: string, valueType?: string, partialData?: Partial<SpecificationCharacteristicValueUse>,
@@ -86,8 +87,9 @@ export const resourceSpecCharValue = (
     },
   },
 );
+
 export const referenceSpecCharValue = (
-  id: string, name?: string,
+  id: string, name?: string, valueReferenceSpecification?: Specification,
 ): SpecificationCharacteristicValueUse => specCharValueGenerator(
   id,
   name,
@@ -100,6 +102,7 @@ export const referenceSpecCharValue = (
       producible: false,
       visible: true,
       isResource: true,
+      valueReferenceSpecification,
     },
   },
 );
