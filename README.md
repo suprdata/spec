@@ -17,9 +17,11 @@ We want to manage the players of a team.
 Let's specify and model athletes and create a list of known football players.
 
 ```ts
-import {typed} from './model';
+import {model, typed} from './model';
+import {Specification} from './Specification';
+import {Thing} from './Thing';
 
-const personType = typed<Thing>(('Common/Person'), {
+const personType = typed<Specification>(('Common/Person'), {
   '@context': 'Common',
   '@version': '1',
 });
@@ -35,7 +37,7 @@ const athleteType = typed<Thing>('SportsTeam/Athlete', {
   '@version': '1',
 });
 
-const baseAthelete = mpdel<Thing>(athleteType({
+const baseAthelete = model<Thing>(athleteType({
   specification: personSpec,
   accessRights: [
     {
