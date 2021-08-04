@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/suprdata/spec/compare/v0.2.2...v0.2.3) (2021-08-04)
+
+
+### Features
+
+* Configure an optional specification for a reference in CharacteristicValue in a SpecificationCharacteristicValue ([7f14bf8](https://github.com/suprdata/spec/commit/7f14bf8d2439b7127eb050520ea781d6ed4ee1b5))
+
 ### [0.2.2](https://github.com/suprdata/spec/compare/v0.2.1...v0.2.2) (2021-08-01)
 
 
